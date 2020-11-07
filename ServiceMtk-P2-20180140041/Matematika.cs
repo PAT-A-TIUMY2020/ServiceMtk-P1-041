@@ -12,30 +12,98 @@ namespace ServiceMtk_P2_20180140041
     {
         int IMatematika.Bagi(int a, int b)
         {
-            return a / b;
+            try
+            {
+                return a / b;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                MathFault mf = new MathFault();
+                mf.Kode = "Inputan yang anda masukan salah";
+                mf.Pesan = "Masukan input yang benar";
+                throw new FaultException<MathFault>(mf);
+            }
         }
+
 
         int IMatematika.Kali(int a, int b)
         {
-            return a * b;
+            try
+            {
+
+
+                return a * b;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                MathFault mf = new MathFault();
+                mf.Kode = "Inputan yang anda masukan salah";
+                mf.Pesan = "Masukan input yang benar";
+                throw new FaultException<MathFault>(mf);
+            }
         }
 
         int IMatematika.Kurang(int a, int b)
         {
-            return a - b;
+            try
+            {
+
+                return a - b;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                MathFault mf = new MathFault();
+                mf.Kode = "Inputan yang anda masukan salah";
+                mf.Pesan = "Masukan input yang benar";
+                throw new FaultException<MathFault>(mf);
+            }
         }
 
         int IMatematika.Tambah(int a, int b)
         {
-            return a + b;
+            try
+            {
+
+
+                return a + b;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                MathFault mf = new MathFault();
+                mf.Kode = "Inputan yang anda masukan salah";
+                mf.Pesan = "Masukan input yang benar";
+                throw new FaultException<MathFault>(mf);
+            }
         }
 
         Koordinat IMatematika.TKoordinat(Koordinat a, Koordinat b)
         {
-            Koordinat hasil = new Koordinat();
-            hasil.X = a.X + b.X;
-            hasil.Y = a.Y + b.Y;
-            return hasil;
+            try
+            {
+
+
+                Koordinat hasil = new Koordinat();
+                hasil.X = a.X + b.X;
+                hasil.Y = a.Y + b.Y;
+                return hasil;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+
+                MathFault mf = new MathFault();
+                mf.Kode = "Inputan yang anda masukan salah";
+                mf.Pesan = "Masukan input yang benar";
+                throw new FaultException<MathFault>(mf);
+            }
 
         }
     }
